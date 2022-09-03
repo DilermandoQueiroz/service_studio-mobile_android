@@ -3,11 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/onboardingFragment">
 
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.app.demo.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/onboardingFragment"
+        android:name="com.app.demo.ui.OnboardingFragment"
+        android:label="fragment_onboarding"
+        tools:layout="@layout/fragment_onboarding" />
 </navigation>
