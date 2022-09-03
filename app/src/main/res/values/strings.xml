@@ -7,4 +7,10 @@
     <string name="text_subtitle_onboarding">We are building a service for studios, that can be managed easily.</string>
     <string name="text_register">Register</string>
     <string name="text_signin">Login</string>
+    <string name="text_tattoo">Tatuador</string>
+    <string name="text_email">Email</string>
+    <string name="text_password">Senha</string>
+    <string name="text_confirm_password">Confirmar senha</string>
+    <string name="text_name">Nome</string>
+    <string name="text_terms">Clicando em “Cadastrar”, você está de acordo com os Termos de Serviço</string>
 </resources>
