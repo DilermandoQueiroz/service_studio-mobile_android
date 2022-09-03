@@ -13,4 +13,7 @@
     <string name="text_confirm_password">Confirmar senha</string>
     <string name="text_name">Nome</string>
     <string name="text_terms">Clicando em “Cadastrar”, você está de acordo com os Termos de Serviço</string>
+    <string name="text_forget_password">Esquecei a senha</string>
+    <string name="text_register_account">Não possui uma conta? Crie aqui</string>
+    <string name="text_login">Entrar</string>
 </resources>

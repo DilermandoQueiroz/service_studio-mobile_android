@@ -6,11 +6,6 @@
     app:startDestination="@id/onboardingFragment">
 
     <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.app.demo.MainFragment"
-        android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
-    <fragment
         android:id="@+id/onboardingFragment"
         android:name="com.app.demo.features.intro.IntroFragment"
         android:label="fragment_onboarding"
@@ -22,10 +17,30 @@
             app:exitAnim="@anim/no_animation"
             app:popEnterAnim="@anim/no_animation"
             app:popExitAnim="@anim/slide_out_up"/>
+        <action
+            android:id="@+id/action_onboardingFragment_to_registerFragment"
+            app:destination="@id/registerFragment"
+            app:enterAnim="@anim/slide_in_up"
+            app:exitAnim="@anim/no_animation"
+            app:popEnterAnim="@anim/no_animation"
+            app:popExitAnim="@anim/slide_out_up"/>
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.app.demo.features.login.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment"
+            app:enterAnim="@anim/slide_in_up"
+            app:exitAnim="@anim/no_animation"
+            app:popEnterAnim="@anim/no_animation"
+            app:popExitAnim="@anim/slide_out_up"/>
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.app.demo.features.register.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" />
 </navigation>

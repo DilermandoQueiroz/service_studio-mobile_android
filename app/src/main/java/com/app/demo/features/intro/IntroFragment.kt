@@ -24,11 +24,13 @@ class IntroFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setButton()
-
     }
     private fun setButton() = with(binding) {
         btnLogin.setOnClickListener {
             findNavController().navigate(IntroFragmentDirections.actionOnboardingFragmentToLoginFragment())
+        }
+        btnRegister.setOnClickListener {
+            findNavController().navigate(IntroFragmentDirections.actionOnboardingFragmentToRegisterFragment())
         }
     }
 }
