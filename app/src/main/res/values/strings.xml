@@ -6,5 +6,5 @@
     <string name="text_title_onboarding">Welcome to\nservice studio</string>
     <string name="text_subtitle_onboarding">We are building a service for studios, that can be managed easily.</string>
     <string name="text_register">Register</string>
-    <string name="text_signin">Sign In</string>
+    <string name="text_signin">Login</string>
 </resources>
