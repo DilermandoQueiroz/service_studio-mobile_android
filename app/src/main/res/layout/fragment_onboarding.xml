@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="48dp"
         android:text="@string/text_register"
-
+        android:backgroundTint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnSignIn"
         app:layout_constraintStart_toStartOf="@+id/textTitle" />
@@ -48,6 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_signin"
+        android:backgroundTint="#808080"
         app:layout_constraintStart_toEndOf="@id/btnRegister"
         android:layout_marginBottom="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
