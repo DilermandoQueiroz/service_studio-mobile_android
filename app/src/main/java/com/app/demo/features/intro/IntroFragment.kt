@@ -1,4 +1,4 @@
-package com.app.demo.ui.intro
+package com.app.demo.features.intro
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
