@@ -2,6 +2,6 @@ package com.app.navigation
 
 import android.content.Context
 
-interface Navigator {
+interface NavigatorAppTattoo {
     fun loginNavigator(context: Context)
 }

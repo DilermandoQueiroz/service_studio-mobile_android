@@ -16,3 +16,4 @@ rootProject.name = "TattooDemo"
 include ':app'
 include ':feature:login'
 include ':navigation'
+include ':commons'

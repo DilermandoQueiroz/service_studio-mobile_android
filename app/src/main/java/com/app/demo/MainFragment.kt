@@ -5,8 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.app.demo.databinding.ActivityMainBinding
 import com.app.demo.databinding.FragmentMainBinding
+import com.app.navigation.NavigatorAppTattoo
+import org.koin.android.ext.android.inject
 
 class MainFragment : Fragment() {
 
