@@ -2,6 +2,7 @@ plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id 'androidx.navigation.safeargs.kotlin'
+    id 'com.google.gms.google-services'
 
 }
 
@@ -53,4 +54,7 @@ dependencies {
     api "io.insert-koin:koin-core:$koin_version"
     testImplementation "io.insert-koin:koin-test:$koin_version"
 
+
+    api platform('com.google.firebase:firebase-bom:30.4.1')
+    api 'com.google.firebase:firebase-analytics-ktx'
 }

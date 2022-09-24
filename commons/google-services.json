@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "841452146425",
+    "project_id": "ease-service-f6352",
+    "storage_bucket": "ease-service-f6352.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:841452146425:android:a4cd0333014d74bf759c28",
+        "android_client_info": {
+          "package_name": "com.app.commons"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "841452146425-v7n1l0hp65vs4p23h4v3ohnmakgj48u9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLQ15xIZ1Sp2gXjd1uI7eMKJw_7hJKMwc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "841452146425-v7n1l0hp65vs4p23h4v3ohnmakgj48u9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
