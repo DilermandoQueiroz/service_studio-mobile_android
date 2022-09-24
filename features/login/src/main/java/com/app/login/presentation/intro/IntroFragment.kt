@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.app.login.databinding.FragmentIntroBinding
 
 
@@ -26,7 +27,7 @@ class IntroFragment : Fragment() {
     }
     private fun setButton() = with(binding) {
         btnLogin.setOnClickListener {
-//            findNavController().navigate(IntroFragmentDirectionDirections.actionOnboardingFragmentToLoginFragment())
+            findNavController().navigate(IntroFragmentDirections.actionIntroFragmentToLoginFragment())
         }
         btnRegister.setOnClickListener {
 //            findNavController().navigate(IntroFragmentDirections.actionOnboardingFragmentToRegisterFragment())
