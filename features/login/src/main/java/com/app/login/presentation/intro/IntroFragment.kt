@@ -30,7 +30,7 @@ class IntroFragment : Fragment() {
             findNavController().navigate(IntroFragmentDirections.actionIntroFragmentToLoginFragment())
         }
         btnRegister.setOnClickListener {
-//            findNavController().navigate(IntroFragmentDirections.actionOnboardingFragmentToRegisterFragment())
+            findNavController().navigate(IntroFragmentDirections.actionIntroFragmentToRegisterFragment())
         }
     }
 }
