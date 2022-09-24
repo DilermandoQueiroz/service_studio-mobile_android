@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">TattooDemo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="create_account">Criar conta</string>
+    <string name="text_title_onboarding">Welcome to\nservice studio</string>
+    <string name="text_subtitle_onboarding">We are building a service for studios, that can be managed easily.</string>
+    <string name="text_register">Register</string>
+    <string name="text_signin">Login</string>
+    <string name="text_tattoo">Tatuador</string>
+    <string name="text_email">Email</string>
+    <string name="text_password">Senha</string>
+    <string name="text_confirm_password">Confirmar senha</string>
+    <string name="text_name">Nome</string>
+    <string name="text_terms">Clicando em “Cadastrar”, você está de acordo com os Termos de Serviço</string>
+    <string name="text_forget_password">Esquecei a senha</string>
+    <string name="text_register_account">Não possui uma conta? Crie aqui</string>
+    <string name="text_login">Entrar</string>
+</resources>
