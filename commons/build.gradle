@@ -57,4 +57,8 @@ dependencies {
 
     api platform('com.google.firebase:firebase-bom:30.4.1')
     api 'com.google.firebase:firebase-analytics-ktx'
+
+    api "androidx.startup:startup-runtime:1.1.1"
+
+
 }
