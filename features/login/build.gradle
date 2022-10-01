@@ -44,8 +44,8 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
-    implementation project(path: ':commons')
-    implementation 'com.firebaseui:firebase-ui-auth:7.2.0'
+    implementation project(':commons')
+    api project(':navigation')
 
-//    implementation project(path: ':navigation')
+    implementation 'com.firebaseui:firebase-ui-auth:7.2.0'
 }

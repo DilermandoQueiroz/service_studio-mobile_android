@@ -1,10 +1,12 @@
-package com.app.demo
+package com.app.demo.presentation
 
 import android.app.Application
+import com.app.demo.presentation.navigation.AppNavigationImpl
 import com.app.login.domain.register.RegisterUseCase
+import com.app.login.navigation.LoginNavigatorImpl
 import com.app.login.presentation.register.RegisterViewModel
-import com.app.navigation.NavigatorAppTattoo
-import com.app.navigation.NavigatorImpl
+import com.app.navigation.AppNavigator
+import com.app.navigation.LoginNavigator
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -22,7 +24,8 @@ class TattooAppApplication : Application() {
         }
     }
     private val navigationModule = module {
-        single <NavigatorAppTattoo>{ NavigatorImpl() }
+        single <AppNavigator>{ AppNavigationImpl() }
+        single <LoginNavigator>{ LoginNavigatorImpl() }
     }
     private val loginModule = module {
         viewModel { RegisterViewModel(registerUseCase = RegisterUseCase()) }

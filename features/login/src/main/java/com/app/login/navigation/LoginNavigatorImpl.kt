@@ -1,14 +1,15 @@
-package com.app.navigation
+package com.app.login.navigation
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import com.app.login.presentation.LoginActivity
+import com.app.navigation.LoginNavigator
 
-class NavigatorImpl : NavigatorAppTattoo {
+class LoginNavigatorImpl: LoginNavigator {
 
-    override fun loginNavigator(context: Context) {
+    override fun navigate(context: Context) {
         val intent = Intent(context, LoginActivity::class.java)
         context.startActivity(intent)
     }
-
 }
