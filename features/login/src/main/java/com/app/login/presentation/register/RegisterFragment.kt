@@ -33,7 +33,7 @@ class RegisterFragment : Fragment()  {
 
     private fun setButton() = with(binding) {
         button.setOnClickListener {
-            navigator.navigate(requireContext())
+            viewModel.setRegisterClick()
         }
     }
 }

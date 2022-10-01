@@ -8,6 +8,6 @@ class RegisterViewModel(
 ) : ViewModel() {
 
     fun setRegisterClick(){
-        registerUseCase
+        registerUseCase()
     }
 }
