@@ -2,7 +2,10 @@ package com.app.demo.presentation
 
 import android.app.Application
 import com.app.demo.presentation.navigation.AppNavigationImpl
+import com.app.firebaseapp.FirebaseApp
 import com.app.home.navigation.HomeNavigationImpl
+import com.app.login.data.FirebaseRepository
+import com.app.login.data.FirebaseRepositoryImpl
 import com.app.login.domain.register.RegisterUseCase
 import com.app.login.navigation.LoginNavigatorImpl
 import com.app.login.presentation.register.RegisterViewModel
@@ -25,12 +28,17 @@ class TattooAppApplication : Application() {
             modules(listOf(loginModule, navigationModule))
         }
     }
+
     private val navigationModule = module {
-        single <AppNavigator>{ AppNavigationImpl() }
-        single <LoginNavigator>{ LoginNavigatorImpl() }
-        single <HomeNavigator>{ HomeNavigationImpl() }
+        single<AppNavigator> { AppNavigationImpl() }
+        single<LoginNavigator> { LoginNavigatorImpl() }
+        single<HomeNavigator> { HomeNavigationImpl() }
     }
     private val loginModule = module {
-        viewModel { RegisterViewModel(registerUseCase = RegisterUseCase()) }
+//        factory { FirebaseApp() }
+        single<FirebaseRepository> { FirebaseRepositoryImpl() }
+//        single<FirebaseRepository> { FirebaseRepositoryImpl(firebase = get()) }
+        viewModel {
+            RegisterViewModel(registerUseCase = RegisterUseCase(firebaseRepository = get())) }
     }
 }

@@ -33,7 +33,7 @@ class RegisterFragment : Fragment()  {
 
     private fun setButton() = with(binding) {
         button.setOnClickListener {
-            viewModel.setRegisterClick()
+            viewModel.setRegisterClick(textEmail.text.toString(), textPassword.text.toString())
         }
     }
 }

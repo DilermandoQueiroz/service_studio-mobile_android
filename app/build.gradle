@@ -49,5 +49,6 @@ dependencies {
     implementation project(':commons')
     implementation project(':features:login')
     implementation project(':features:home')
+    api project(':firebaseapp')
 
 }
