@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.app.login.databinding.FragmentRegisterBinding
 import com.app.navigation.AppNavigator
+import com.app.navigation.HomeNavigator
 import com.app.navigation.LoginNavigator
 //import com.app.demo.presentation.navigation.NavigatorAppTattoo
 import org.koin.android.ext.android.inject
@@ -17,6 +18,7 @@ class RegisterFragment : Fragment()  {
     private lateinit var binding: FragmentRegisterBinding
     private val viewModel by viewModel<RegisterViewModel>()
     private val navigator by inject<AppNavigator>()
+    private val navigatorHome by inject<HomeNavigator>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,7 +35,10 @@ class RegisterFragment : Fragment()  {
 
     private fun setButton() = with(binding) {
         button.setOnClickListener {
-            viewModel.setRegisterClick(textEmail.text.toString(), textPassword.text.toString())
+            viewModel.setRegisterClick(textEmail.text.toString(), textPassword.text.toString(), requireContext())
+        }
+        textTerms.setOnClickListener {
+            navigatorHome.navigate(requireContext())
         }
     }
 }
