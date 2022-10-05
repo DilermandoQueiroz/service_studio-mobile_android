@@ -7,8 +7,12 @@ import kotlinx.coroutines.flow.Flow
 
 class FirebaseRepositoryImpl(
 ) : FirebaseRepository {
-    override fun authLogin(user: UserModel, password: String): Flow<LoginResult> {
-        val result = FirebaseApp.authLogin(user, password)
+    override fun createUserWithEmailAndPassword(user: UserModel, password: String): Flow<LoginResult> {
+        val result = FirebaseApp.createUserWithEmailAndPassword(user, password)
         return result
     }
+
+    override fun loginUserWithEmailAndPassword(email: String, password: String): Flow<LoginResult> {
+        val result = FirebaseApp.loginUserWithEmailAndPassword(email, password)
+        return result    }
 }

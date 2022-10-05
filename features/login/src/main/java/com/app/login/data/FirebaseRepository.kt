@@ -5,5 +5,6 @@ import com.app.firebaseapp.domain.LoginResult
 import kotlinx.coroutines.flow.Flow
 
 interface FirebaseRepository {
-    fun authLogin(user: UserModel, password: String): Flow<LoginResult>
+    fun createUserWithEmailAndPassword(user: UserModel, password: String): Flow<LoginResult>
+    fun loginUserWithEmailAndPassword(email: String, password: String): Flow<LoginResult>
 }

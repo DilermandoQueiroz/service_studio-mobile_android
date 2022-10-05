@@ -9,6 +9,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.app.commons.domain.UserModel
+import com.app.firebaseapp.domain.LoginResult
 import com.app.login.databinding.FragmentRegisterBinding
 import com.app.login.domain.register.RegisterResult
 import com.app.navigation.AppNavigator
@@ -43,9 +44,9 @@ class RegisterFragment : Fragment()  {
         lifecycleScope.launch {
             viewModel.loginResult.collect {
                 when(it){
-                    is RegisterResult.Success -> navigateSuccess()
-                    is RegisterResult.Error -> renderError(it.message)
-                    is RegisterResult.Loading -> binding.progress.isVisible = it.isLoading
+                    is LoginResult.Success -> navigateSuccess()
+                    is LoginResult.Error -> renderError(it.message)
+                    is LoginResult.Loading -> binding.progress.isVisible = it.isLoading
                 }
             }
         }

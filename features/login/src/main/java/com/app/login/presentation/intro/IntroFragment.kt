@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.app.firebaseapp.FirebaseApp
+import com.app.firebaseapp.utils.Constants.TAG_FIREBASE
 import com.app.login.databinding.FragmentIntroBinding
 
 
@@ -28,8 +29,8 @@ class IntroFragment : Fragment() {
         setButton()
         val user = FirebaseApp.auth.currentUser.toString()
         val userName = FirebaseApp.auth.currentUser?.email.toString()
-        Log.d("TAG_FIREBASE", user)
-        Log.d("TAG_FIREBASE", userName)
+        Log.d(TAG_FIREBASE, user)
+        Log.d(TAG_FIREBASE,userName)
     }
     private fun setButton() = with(binding) {
         btnLogin.setOnClickListener {
