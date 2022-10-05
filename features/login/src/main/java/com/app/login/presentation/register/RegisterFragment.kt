@@ -4,12 +4,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import com.app.commons.domain.UserModel
 import com.app.login.databinding.FragmentRegisterBinding
+import com.app.login.domain.register.RegisterResult
 import com.app.navigation.AppNavigator
 import com.app.navigation.HomeNavigator
 import com.app.navigation.LoginNavigator
+import kotlinx.coroutines.launch
 //import com.app.demo.presentation.navigation.NavigatorAppTattoo
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -18,7 +23,6 @@ class RegisterFragment : Fragment()  {
 
     private lateinit var binding: FragmentRegisterBinding
     private val viewModel by viewModel<RegisterViewModel>()
-    private val navigator by inject<AppNavigator>()
     private val navigatorHome by inject<HomeNavigator>()
 
     override fun onCreateView(
@@ -32,6 +36,23 @@ class RegisterFragment : Fragment()  {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setButton()
+        observerViewModel()
+    }
+
+    private fun observerViewModel() {
+        lifecycleScope.launch {
+            viewModel.loginResult.collect {
+                when(it){
+                    is RegisterResult.Success -> navigateSuccess()
+                    is RegisterResult.Error -> renderError(it.message)
+                    is RegisterResult.Loading -> binding.progress.isVisible = it.isLoading
+                }
+            }
+        }
+    }
+
+    private fun renderError(erroMessage: String) {
+        Toast.makeText(requireContext(), erroMessage, Toast.LENGTH_SHORT).show()
     }
 
     private fun setButton() = with(binding) {
@@ -45,5 +66,9 @@ class RegisterFragment : Fragment()  {
         textTerms.setOnClickListener {
             navigatorHome.navigate(requireContext())
         }
+    }
+
+    private fun navigateSuccess() {
+        navigatorHome.navigate(requireContext())
     }
 }

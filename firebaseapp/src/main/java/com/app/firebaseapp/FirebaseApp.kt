@@ -18,8 +18,8 @@ import java.lang.Exception
 
 object FirebaseApp {
 
-    val auth: FirebaseAuth = Firebase.auth
-    val user: FirebaseUser? = Firebase.auth.currentUser
+    val auth: FirebaseAuth get() = Firebase.auth
+    val user: FirebaseUser? get() = Firebase.auth.currentUser
 
     fun authLogin(user: UserModel, password: String) = flow {
         try {
@@ -60,5 +60,4 @@ object FirebaseApp {
             emit(LoginResult.Error(""))
         }
     }
-
 }
