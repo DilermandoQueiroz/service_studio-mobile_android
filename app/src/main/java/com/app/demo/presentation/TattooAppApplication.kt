@@ -6,8 +6,10 @@ import com.app.firebaseapp.FirebaseApp
 import com.app.home.navigation.HomeNavigationImpl
 import com.app.login.data.FirebaseRepository
 import com.app.login.data.FirebaseRepositoryImpl
+import com.app.login.domain.login.LoginUseCase
 import com.app.login.domain.register.RegisterUseCase
 import com.app.login.navigation.LoginNavigatorImpl
+import com.app.login.presentation.login.LoginViewModel
 import com.app.login.presentation.register.RegisterViewModel
 import com.app.navigation.AppNavigator
 import com.app.navigation.HomeNavigator
@@ -35,10 +37,8 @@ class TattooAppApplication : Application() {
         single<HomeNavigator> { HomeNavigationImpl() }
     }
     private val loginModule = module {
-//        factory { FirebaseApp() }
         single<FirebaseRepository> { FirebaseRepositoryImpl() }
-//        single<FirebaseRepository> { FirebaseRepositoryImpl(firebase = get()) }
-        viewModel {
-            RegisterViewModel(registerUseCase = RegisterUseCase(firebaseRepository = get())) }
+        viewModel { RegisterViewModel(registerUseCase = RegisterUseCase(firebaseRepository = get())) }
+        viewModel { LoginViewModel(registerUseCase = LoginUseCase(firebaseRepository = get())) }
     }
 }

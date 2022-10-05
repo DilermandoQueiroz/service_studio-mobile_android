@@ -11,12 +11,8 @@ import androidx.lifecycle.lifecycleScope
 import com.app.commons.domain.UserModel
 import com.app.firebaseapp.domain.LoginResult
 import com.app.login.databinding.FragmentRegisterBinding
-import com.app.login.domain.register.RegisterResult
-import com.app.navigation.AppNavigator
 import com.app.navigation.HomeNavigator
-import com.app.navigation.LoginNavigator
 import kotlinx.coroutines.launch
-//import com.app.demo.presentation.navigation.NavigatorAppTattoo
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

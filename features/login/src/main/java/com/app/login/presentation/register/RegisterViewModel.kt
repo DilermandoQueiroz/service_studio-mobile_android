@@ -16,7 +16,6 @@ class RegisterViewModel(
     private val registerUseCase: RegisterUseCase
 ) : ViewModel() {
 
-
     private val _loginResult = MutableSharedFlow<LoginResult>(0)
     val loginResult = _loginResult.asSharedFlow()
 

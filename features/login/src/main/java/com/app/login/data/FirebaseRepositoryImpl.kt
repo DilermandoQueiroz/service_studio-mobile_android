@@ -14,5 +14,6 @@ class FirebaseRepositoryImpl(
 
     override fun loginUserWithEmailAndPassword(email: String, password: String): Flow<LoginResult> {
         val result = FirebaseApp.loginUserWithEmailAndPassword(email, password)
-        return result    }
+        return result
+    }
 }

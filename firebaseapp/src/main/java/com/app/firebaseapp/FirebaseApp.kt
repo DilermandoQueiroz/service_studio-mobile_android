@@ -23,7 +23,10 @@ object FirebaseApp {
 
     fun isLogged(): Boolean = auth.currentUser != null
 
-    fun signOut() = auth.signOut()
+    fun signOut() {
+        auth.signOut()
+        Log.d(TAG_FIREBASE, "LOGOUT")
+    }
 
     fun createUserWithEmailAndPassword(user: UserModel, password: String) = flow {
         try {
@@ -49,17 +52,20 @@ object FirebaseApp {
         }
     }.flowOn(Dispatchers.IO)
 
-    fun loginUserWithEmailAndPassword(user: String, password: String) = flow {
+    fun loginUserWithEmailAndPassword(email: String, password: String) = flow {
         try {
-            auth.createUserWithEmailAndPassword(user, password).await()
-            Log.d(TAG_FIREBASE, "CREATE")
+            auth.signInWithEmailAndPassword(email, password).await()
+            emit(LoginResult.Success)
+            Log.d(TAG_FIREBASE, "Logged")
         } catch (e: Exception) {
             Log.d(TAG_FIREBASE, "ERRO_CREATE")
+            Log.d(TAG_FIREBASE, e.message.toString())
             when(e) {
                 is FirebaseAuthWeakPasswordException -> emit(LoginResult.Error("Senha fraca"))
-                is FirebaseAuthInvalidCredentialsException -> emit(LoginResult.Error("Email inválido"))
-                is FirebaseAuthUserCollisionException -> emit(LoginResult.Error("Voce ja possui uma conta"))
-                else -> emit(LoginResult.Error("Login Error"))
+                is FirebaseAuthInvalidCredentialsException -> emit(LoginResult.Error("Senha inválida"))
+                is FirebaseAuthInvalidUserException -> emit(LoginResult.Error("Conta invalida"))
+                is FirebaseAuthUserCollisionException -> emit(LoginResult.Error("Conta invalida"))
+                else -> emit(LoginResult.Error( e.message.toString()))
             }
         }
     }.flowOn(Dispatchers.IO)

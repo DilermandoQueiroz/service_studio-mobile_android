@@ -128,7 +128,6 @@
         app:layout_constraintEnd_toEndOf="@+id/textTitle"
         app:layout_constraintStart_toStartOf="@+id/textTitle" />
 
-
     <ProgressBar
         android:id="@+id/progress"
         android:layout_width="wrap_content"
