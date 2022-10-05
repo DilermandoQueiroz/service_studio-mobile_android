@@ -1,12 +1,12 @@
 package com.app.login.domain.register
 
-import com.app.firebaseapp.LoginResult
 import com.app.login.data.FirebaseRepository
-import com.google.firebase.auth.AuthResult
+import com.app.commons.domain.UserModel
+import com.app.firebaseapp.domain.LoginResult
 import kotlinx.coroutines.flow.Flow
 
 class RegisterUseCase(private val firebaseRepository: FirebaseRepository) {
-    operator fun invoke(text: String, password: String) : Flow<LoginResult> {
-        return firebaseRepository.authLogin(text, password)
+    operator fun invoke(user: UserModel, password: String) : Flow<LoginResult> {
+        return firebaseRepository.authLogin(user, password)
     }
 }

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.app.commons.domain.UserModel
 import com.app.login.databinding.FragmentRegisterBinding
 import com.app.navigation.AppNavigator
 import com.app.navigation.HomeNavigator
@@ -35,7 +36,11 @@ class RegisterFragment : Fragment()  {
 
     private fun setButton() = with(binding) {
         button.setOnClickListener {
-            viewModel.setRegisterClick(textEmail.text.toString(), textPassword.text.toString(), requireContext())
+            val user = UserModel(
+                name = textName.text.toString(),
+                email = textEmail.text.toString()
+            )
+            viewModel.setRegisterClick(user, textPassword.text.toString())
         }
         textTerms.setOnClickListener {
             navigatorHome.navigate(requireContext())

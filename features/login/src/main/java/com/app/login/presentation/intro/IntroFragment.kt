@@ -28,8 +28,8 @@ class IntroFragment : Fragment() {
         setButton()
         val user = FirebaseApp.auth.currentUser.toString()
         val userName = FirebaseApp.auth.currentUser?.email.toString()
-        Log.d("FIREBASE_APP", user)
-        Log.d("FIREBASE_APP", userName)
+        Log.d("TAG_FIREBASE", user)
+        Log.d("TAG_FIREBASE", userName)
     }
     private fun setButton() = with(binding) {
         btnLogin.setOnClickListener {
